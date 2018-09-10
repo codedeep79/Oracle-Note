@@ -32,3 +32,19 @@ ORACLE_SID = [orcl11g] ? orcl12
 echo $ORACLE_HOME
 dbua
 ```
+
+![](/images/oracle_upgrade1.PNG)
+
+```
+echo $ORACLE_HOME
+/u01/app/oracle/product/12.1.0/
+
+sqlplus / as sysdba 
+SQL > select instance_name, version from v$instance;
+INSTANCE_NAME VERSION  
+------------- -------------
+orcl11c       12.1.0.1.0
+
+SQL > EXECUTE DBMS_STATS.GATHER_FIXED_OBJECTS_STATS;
+
+```
