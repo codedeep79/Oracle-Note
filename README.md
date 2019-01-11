@@ -17,5 +17,5 @@ cx_Oracle:
 
 C and C++ connect Oracle through Pro*C:
 
-Pro*C is an embedded SQL programming language and it's installed in Oracle database. Pro*C uses either C or C++ as its host language  
+Pro\*C is an embedded SQL programming language and it's installed in Oracle database. Pro*C uses either C or C++ as its host language  
 
