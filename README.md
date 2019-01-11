@@ -15,4 +15,7 @@ cx_Oracle:
   + [Detail more](https://cx-oracle.readthedocs.io/en/latest/installation.html#installing-cx-oracle-on-linux)
 + cx_Oracle example: https://github.com/oracle/python-cx_Oracle/tree/master/samples
 
-C++ API
+C and C++ connect Oracle through Pro*C:
+
+Pro*C is an embedded SQL programming language and it's installed in Oracle database. Pro*C uses either C or C++ as its host language  
+
