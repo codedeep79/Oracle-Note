@@ -22,3 +22,50 @@ C and C++ connect Oracle through Pro*C:
 + Detailed:
   + Create new project in Visual studio 20xx
   + Right click into Header Files or Resource Files, choose **Add -> Exist Item**, go to folder direct **oracle/precomp/lib/msvc/** in your Drive and choose 2 items **oraSQL9.LIB and oraSQX9.LIB**
+  + Right click Source Files and create a file .pc extension. Ex: test.pc
+    
+    ```cpp
+    exec sql begin declare section;
+    char *cons="scott/tiger";
+    char val1[30],val2[30];
+    exec sql end declare section;
+    exec sql include sqlca;
+
+    #include<stdio.h>
+    #include<conio.h>
+    #include<stdlib.h>
+
+     void main()
+     {
+      printf("Connecting to the database...\n");
+
+      exec sql connect :cons;
+
+      if(sqlca.sqlcode==0) printf("Connection established successfully...\n");
+      else
+      exit(0);
+
+
+      printf("Enter the value u want to update :");
+      scanf("%s",val1);
+
+      printf("Enter the value u want to update with :");
+      scanf("%s",val2);
+
+
+      exec sql update dept set loc= :val2 where loc= :val1;
+
+      if(sqlca.sqlcode==0)
+      {
+       printf("Updation success...");
+       exec sql commit work release;
+      }
+
+      else
+      printf("Error message: %s",sqlca.sqlerrm.sqlerrmc);
+
+      getch();
+    }
+    ```
+   + Compile Pro\*C to C or C++:
+     Press Shift button + right click -> Command prompt dialog display -> type `proc test.pc` to compile and generate test.c -> run test.c to trial  
