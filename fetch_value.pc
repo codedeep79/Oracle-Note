@@ -1,0 +1,48 @@
+exec sql begin declare section;
+int a;
+int id;
+varchar dn[20],l[20];
+#define UNAME_LEN 20
+#define PWD_LEN 20
+VARCHAR username[UNAME_LEN];
+/* VARCHAR is an Oracle-supplied struct */
+varchar password[PWD_LEN];
+exec sql end declare section;
+exec sql include sqlca;
+
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+
+
+	/* Connect to ORACLE--* Copy the username into the VARCHAR.*/
+	strncpy((char *)username.arr, "scott", UNAME_LEN);
+
+	/* Set the length component of the VARCHAR. */
+	username.len = strlen(username.arr);
+
+	/* Copy the password. */
+	strncpy(password.arr, "tiger", PWD_LEN);
+	password.len = strlen((char *)password.arr);
+
+	EXEC SQL CONNECT :username IDENTIFIED BY :password;
+	printf("\nConnected to ORACLE as user: %s\n", username.arr);
+
+	printf("Enter the dept id: ");
+	scanf("%d",&a);
+
+        
+        EXEC SQL SELECT dname,loc INTO :dn, :l
+                 FROM dept
+                 WHERE deptno= :a;
+	
+	dn.arr[dn.len]='\0';
+	l.arr[l.len]='\0';
+        
+        printf("The dept.name is %s and location is %s\n",dn.arr,l.arr);
+	EXEC SQL COMMIT WORK RELEASE;
+	getch();
+        
+}
