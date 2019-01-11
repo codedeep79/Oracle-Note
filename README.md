@@ -17,5 +17,8 @@ cx_Oracle:
 
 C and C++ connect Oracle through Pro*C:
 
-Pro\*C is an embedded SQL programming language and it's installed in Oracle database. Pro*C uses either C or C++ as its host language  
++ Pro\*C is an embedded SQL programming language and it's installed in Oracle database. Pro*C uses either C or C++ as its host language 
 
++ Detailed:
+  + Create new project in Visual studio 20xx
+  + Right click into Header Files or Resource Files, choose **Add -> Exist Item**, go to folder direct **oracle/precomp/lib/msvc/** in your Drive and choose 2 items **oraSQL9.LIB and oraSQX9.LIB**
