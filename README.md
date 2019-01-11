@@ -11,6 +11,6 @@ cx_Oracle:
 + Install:
   `python -m pip install cx_Oracle --upgrade`
   + [Detail more](https://cx-oracle.readthedocs.io/en/latest/installation.html#installing-cx-oracle-on-linux)
-
++ cx_Oracle example: https://github.com/oracle/python-cx_Oracle/tree/master/samples
 
 C++ API
