@@ -70,3 +70,4 @@ C and C++ connect Oracle through Pro*C:
    + Compile Pro\*C to C or C++:
    
      Press Shift button + right click -> Command prompt dialog display -> type `proc test.pc` to compile and generate [test.pc](update_value.pc) -> run [test.c](update_value.c) to trial  
+   + [Oracle Database Error Messages](https://docs.oracle.com/cd/B28359_01/server.111/b28278/toc.htm)
